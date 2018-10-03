@@ -66,8 +66,8 @@ def isAuthorized():  # Method that is used for logging into an existing user by 
             continue
         elif username == logininfo[0] and password == logininfo[1]:
             print('welcome', logininfo[2], logininfo[3])
-            return True
-    return False
+            return True  # sets the boolean value of the method isAuthorized to True if user is logged in
+    return False     # sets the boolean value of the method isAuthorized to False if user isn't logged in
 
 
 def menu():  # Menu method with 5 options that users can choose between
@@ -79,17 +79,17 @@ def menu():  # Menu method with 5 options that users can choose between
             if yesno == 'yes':
                 createUser()
                 print('You will now proceed to login.')
-                if isAuthorized():
-                    input("Authorized \t Press any key to continue: ")
-                else:
-                    input("Not authorized")
+                if isAuthorized():  # If the methods boolean value is set to True
+                    input("Authorized \t Press any key to continue: ")  # prints that the user is authorized
+                else:  # If the methods boolean value is set to False
+                    input("Not authorized")   # prints that the user is not authorized
                 break
             elif yesno == 'no':
                 yesno = input("Do you already have a user? yes/no")
                 if yesno == 'yes':
-                    if isAuthorized():
+                    if isAuthorized():  # If the methods boolean value is set to True
                         input("Authorized \t Press any key to continue: ")
-                    else:
+                    else:  # If the methods boolean value is set to False
                         input("Not authorized")
                     break
                 elif yesno == 'no':
@@ -99,7 +99,7 @@ def menu():  # Menu method with 5 options that users can choose between
         menu()
 
     if val == "2":  # calling back the isauthorised method so yu can choose if you want a membership at TK Gym AB
-        if isAuthorized():
+        if isAuthorized():  # If the methods boolean value is set to True
             input("Authorized \t Press any key to continue: ")
             training1 = TkGym()
             if training1.gymcard != 'yes':
