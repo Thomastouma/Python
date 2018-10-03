@@ -3,6 +3,8 @@ import sys
 import time
 
 
+# Python program made by Thomas Touma and Kristian Obradovic
+
 class pt:  # class used for ordering a workout plan
 
     def human(self):
